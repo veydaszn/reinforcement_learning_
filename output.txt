@@ -1,0 +1,31 @@
+Episode | Steps | Total Reward... (episodes)
+100     |  4   |   6 (Avg steps last 10: 4.2)Final Avg Steps: 4.1
+Agent learned optimal path: right, right, down, down (4 steps).
+
+(Plots saved as `agent_learning_plot.png`.)
+
+---
+
+## D. Reflective Case Analysis
+**Description**: A 350-word report on Google's AlphaGo, linking theory (RL) to real-world (Go mastery). Discusses Monte Carlo Tree Search + deep neural nets, advantages (superhuman play), limitations (compute-intensive), ethics (job displacement in gaming?).
+
+**File**: `Reflective_Report.md` (Convert to PDF via Markdown viewer or Word)
+```markdown
+# Reflective Case Analysis: Google's AlphaGo (Reinforcement Learning)
+
+## Description of the System and Learning Approach
+Google's AlphaGo, developed by DeepMind in 2015, revolutionized AI by defeating world champion Lee Sedol in Go—a game with 10^170 possible moves, far exceeding chess. AlphaGo combines **reinforcement learning (RL)** with deep neural networks for adaptive decision-making. The core approach uses **self-play**: The agent plays millions of games against itself, receiving rewards (+1 win, -1 loss) to update policies. It employs **Monte Carlo Tree Search (MCTS)** for exploration (simulating future moves) and **policy/value neural networks** to evaluate positions. Trained via supervised learning on human games, then unsupervised RL for innovation. This adaptive system learns from experience, mirroring theoretical RL (agent-environment interaction via Markov Decision Processes).
+
+## Type of Learning Model Used
+Primarily **model-free RL** (Q-Learning variant via policy gradients), augmented by **supervised learning** for initial bootstrapping and **unsupervised pre-training** on unlabeled game data. Deep convolutional networks process the 19x19 Go board as images.
+
+## Advantages, Limitations, and Ethical Implications
+**Advantages**: AlphaGo achieved superhuman performance (99.8% win rate vs. pros), demonstrating RL's scalability for complex, sequential decisions. It accelerates discoveries (e.g., novel moves humans missed), with applications in drug design (AlphaFold) and optimization. Efficiency improved over iterations—AlphaGo Zero learned tabula rasa in days.
+
+**Limitations**: High computational cost (thousands of TPUs, 4M+ simulations/game) limits accessibility. RL can be sample-inefficient, requiring vast interactions; AlphaGo struggles with unseen rules or real-time constraints.
+
+**Ethical Implications**: While transformative, AlphaGo raises concerns about AI surpassing humans in creative domains, potentially displacing professionals (e.g., Go tutors). Bias in training data could embed cultural preferences in strategies. Privacy issues arise from self-play data, and broader RL deployment (e.g., autonomous weapons) demands safeguards. Ethically, it underscores responsible AI: DeepMind open-sourced parts for societal benefit, but equitable access remains key.
+
+In summary, AlphaGo bridges theory to practice, showing RL's power in adaptive systems while highlighting needs for ethical frameworks. (Word count: 352)
+
+References: Silver et al. (2016), Nature.
